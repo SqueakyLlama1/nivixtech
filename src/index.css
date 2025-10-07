@@ -1,355 +1,233 @@
-html,
-head,
+/* ====================
+   GLOBAL BASE
+==================== */
+:root {
+    --primary: #4285f4;
+    --primary-light: #8ab4f8;
+    --secondary: #41ccff;
+    --surface: #ffffff;
+    --background: #f5f7fa;
+    --on-surface: #202124;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --radius: 18px;
+    --transition: 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    font-family: 'Google Sans', 'Roboto', Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--on-surface);
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, Helvetica, Sans-Serif;
     opacity: 0;
-    height: 100%;
-    width: 100%;
-    padding-top: 7vh;
-}
-
-:focus {
-    outline: none;
-}
-
-img {
-    border-radius: 7px;
+    transition: opacity 0.6s var(--transition);
 }
 
 .visible {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
 }
 
-.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+:focus {
+    outline: none;
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted orange;
+img {
+    border-radius: 12px;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+/* ====================
+   HEADER & NAVIGATION
+==================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    padding: 0.8rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px var(--shadow-color);
+    backdrop-filter: blur(10px);
+    transition: background var(--transition), box-shadow var(--transition);
+}
+
+.header:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header .logo-container .logo {
+    height: 3.25em;
+    object-fit: contain;
+    transition: transform var(--transition);
+}
+
+.header .logo-container .logo:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.nav a:hover {
+    background: var(--primary-light);
     color: #fff;
+}
+
+/* ====================
+   HERO SECTION
+==================== */
+.hero {
     text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 8888;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-.tooltip:focus .tooltiptext {
-    visibility: visible;
-}
-
-#desktop-navigation,
-#mobile-navigation {
-    position: absolute;
-    display: flex;
-    opacity: 0;
-    width: 100%;
-    height: 3em;
-    background-color: #0095ff;
-    border: none;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    transition: opacity 0.5s ease-in-out;
-}
-
-#desktop-navigation button,
-#mobile-navigation button {
-    flex: 1;
-    border-radius: 3px;
-    height: 80%;
-    background-color: #3c9eff;
-    border: none;
-    font-weight: bold;
+    padding: 5rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
-    margin-left: 3px;
-    margin-right: 3px;
-    font-size: 100%;
-    white-space: nowrap;
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.5s ease-in-out;
-    cursor: pointer;
+    border-radius: var(--radius);
+    margin: 2rem auto;
+    max-width: 1100px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-#desktop-navigation button.active,
-.navmenu button.active {
-    background-color: white;
-    color: black;
-    border-color: white;
+.hero:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
-#desktop-navigation button:hover,
-.navmenu button:hover {
-    background-color: white;
-    color: black;
-    border-color: white;
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
 }
 
-#desktop-navigation button:focus,
-.navmenu button:focus {
-    background-color: white;
-    color: black;
-    border-color: white;
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
 }
 
-#mnavcontainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    z-index: 9998;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+/* ====================
+   SECTIONS
+==================== */
+.section {
+    padding: 3.5rem 1.2rem;
+    max-width: 1000px;
+    margin: auto;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    margin-bottom: 2rem;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
-#mnavcontainer.show {
-    display: block;
-    opacity: 1;
+.section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px var(--shadow-color);
 }
 
-.navmenu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75%;
-    height: 85%;
-    background-color: #006eff;
-    border: 2px solid #006eff;
-    border-radius: 3px;
-    z-index: 9999;
+.section h2 {
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.section ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.section li {
+    margin-bottom: 0.8rem;
+}
+
+/* ====================
+   TEAM GRID
+==================== */
+.team-grid {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.navmenu button {
-    width: 100%;
-    background-color: #004bad;
-    border-radius: 3px;
-    padding-top: 7px;
-    border: none;
-    color: white;
-    font-weight: bolder;
-    font-size: 15px;
-    flex: 1;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.navmenu button:hover {
-    background-color: white;
-    color: black;
-}
-
-.navmenu button:focus {
-    background-color: white;
-    color: black;
-}
-
-.navmenu button.active {
-    background-color: white;
-    color: black;
-    border-color: white;
-}
-
-.center {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
-.middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+.team-member {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    text-align: center;
+    flex: 1 1 250px;
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.loader {
-    height: calc(35% - 3px);
-    aspect-ratio: 1 / 1;
-    border: 3px solid white;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    background-color: transparent;
-    animation: loadrotate 0.7s linear infinite;
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-#loadshade {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    border: none;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#loadshadeClose {
-    position: fixed;
-    top: 7px;
-    right: 7px;
-    height: 5%;
-    aspect-ratio: 1 / 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 3px rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
+/* ====================
+   FOOTER
+==================== */
+.footer {
+    background: var(--primary);
     color: white;
-    font-weight: bolder;
-    font-size: 100%;
-    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-    cursor: pointer;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    box-shadow: 0 -4px 10px var(--shadow-color);
 }
 
-#loadshadeClose:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 3px rgba(0, 0, 0, 0.8);
-}
-
-#loadshadeClose:focus {
-    border: 3px solid white;
-}
-
-#loadshadeClose:disabled {
-    color: lightgray;
-    cursor: not-allowed;
-}
-
-#loadshade .middle {
-    height: calc(100% - 5%);
-}
-
-#loadshade .middle .loader {
-    height: 5%;
-}
-
+/* ====================
+   MEDIA QUERIES
+==================== */
 @media screen and (max-width: 500px) {
     #mobile-navigation {
         opacity: 1;
         pointer-events: auto;
     }
-
     #desktop-navigation {
         opacity: 0;
         pointer-events: none;
     }
-
     body {
         overflow-x: hidden;
-        overflow-y: auto;
+    }
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
     }
 }
 
-@media screen and (min-width: 501px) {
-    #desktop-navigation {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    #mobile-navigation {
-        opacity: 0;
-        pointer-events: none;
-    }
-}
-
+/* ====================
+   LOAD ROTATION ANIMATION
+==================== */
 @keyframes loadrotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.pricing-sections {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
-    margin-bottom: 2em;
-}
-
-.pricingSectionBasic,
-.pricingSectionFresh,
-.pricingSectionDeep,
-.pricingSectionDeals,
-.pricingSectionPayment {
-    min-width: 300px;
-    max-width: 350px;
-    flex: 0 0 auto;
-    border-radius: 12px;
-    background-color: #33adff;
-    border: none;
-    position: relative;
-    margin-top: 3.2em;
-    padding: 12px;
-}
-
-.pricingSectionDeals {
-    height: 25em;
-}
-
-.pricingSectionBasic {
-    height: 30em;
-}
-
-.pricingSectionFresh {
-    height: 35em;
-}
-
-.pricingSectionDeep {
-    height: 40em;
-}
-
-.pricingSectionPayment {
-    height: 45em;
-}
-
-.sale-tag {
-    position: absolute;
-    top: 0.7em;
-    right: 0.7em;
-    background: #e53935;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 0.4em 0.8em;
-    border-radius: 1em 0.5em 1em 0.5em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 2;
-    letter-spacing: 1px;
-    pointer-events: none;
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

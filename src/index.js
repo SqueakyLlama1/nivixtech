@@ -9,12 +9,10 @@ const navigationButtons = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    load(false);
 	setTimeout(function() {
     	document.body.classList.add('visible');
     	populateDesktopNavigation();
 		populateMobileNavigation();
-    	setTimeout(closeload, 75);
 	}, 10);
 });
 
@@ -100,32 +98,4 @@ function navigate(event, url) {
     setTimeout(() => {
         window.location.href = url;
     }, 500);
-}
-
-function load(cancancel, cancelhide) {
-	const loadshade = document.getElementById('loadshade');
-	loadshade.style.display = "flex";
-	loadshade.classList.add('visible');
-	if (cancancel) {
-		lsClose.disabled = false;
-	} else if (!cancancel) {
-		lsClose.disabled = true;
-		let nct = document.createElement('span');
-		nct.classList.add('tooltiptext');
-		nct.textContent = "This action cannot be canceled.";
-		lsClose.appendChild(nct);
-	}
-
-	if (cancelhide) {
-		lsClose.onclick = closeload;
-	}
-}
-
-function closeload() {
-	const loadshade = document.getElementById('loadshade');
-	loadshade.classList.remove('visible');
-	loadshade.classList.add('fade-out');
-	setTimeout(function() {
-		loadshade.style.display = "none";
-	}, 500);
 }
