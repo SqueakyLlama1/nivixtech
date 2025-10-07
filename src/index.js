@@ -1,101 +1,65 @@
-const lsClose = document.getElementById('loadshadeClose');
-const loadContainer = document.getElementById('loadcontainer');
-
-const desktopNavigaton = document.getElementById('desktop-navigation');
-const mobileNavigaton = document.getElementById('mobile-navigation');
-
-const navigationButtons = [
-	{ label: "Home", url: "index.html", keyword: " Technology" }
-];
-
-document.addEventListener('DOMContentLoaded', function() {
-	setTimeout(function() {
-    	document.body.classList.add('visible');
-    	populateDesktopNavigation();
-		populateMobileNavigation();
-	}, 10);
-});
-
 var navMenuOpen = false;
+var navPanel = document.getElementById('navpanel');
+var navpanelimg = document.getElementById('navpanelimg');
+var header = document.querySelector('header');
+var navPanelContent = document.getElementById('navPanelContent');
+
+var navigationButtons = [
+    {text:"Home",url:"index.html"},
+    {text:"Employee Dashboard",url:"dashboard.html"}
+];
 
 function openNavMenu() {
     if (!navMenuOpen) {
-        let container = document.getElementById('mnavcontainer');
-        container.style.display = "block";
-        setTimeout(() => {
-            container.classList.add('show');
-        }, 10);
+        navPanel.classList.remove('closing');
+        navPanel.style.display = "block";
+        setTimeout(() => navPanel.classList.add('show'), 10);
+        navMenuOpen = true;
+        navpanelimg.src = "img/menu2.png";
     }
-    navMenuOpen = true;
 }
 
 function closeNavMenu() {
     if (navMenuOpen) {
-        let container = document.getElementById('mnavcontainer');
-        container.classList.remove('show');
+        navPanel.classList.remove('show');
+        navPanel.classList.add('closing');
         setTimeout(() => {
-            container.style.display = "none";
-        }, 300);
+            navPanel.style.display = "none";
+            navPanel.classList.remove('closing');
+        }, 350); // matches transition duration
+        navMenuOpen = false;
+        navpanelimg.src = "img/menu.png";
     }
-    navMenuOpen = false;
 }
 
-function populateMobileNavigation() {
-    let navigationContainer = document.getElementById('mobile-navigation');
-    let middleDiv = document.createElement('div');
-    middleDiv.classList.add('middle');
-
-    let navbutton = document.createElement('button');
-    navbutton.textContent = "Switch Page";
-    navbutton.onclick = openNavMenu;
-
-	let menu = document.getElementById("navmenu");
-    let cancelBtn = document.createElement('button');
-    cancelBtn.textContent = "Cancel";
-    cancelBtn.onclick = closeNavMenu;
-
-    menu.appendChild(cancelBtn);
-
-    navigationButtons.forEach(button => {
-        let option = document.createElement('button');
-        option.textContent = button.label;
-        option.onclick = function(event) {
-            navigate(event, button.url);
-        };
-        if (document.title.includes(button.keyword)) {
-            option.classList.add('active');
-        }
-        menu.appendChild(option);
-    });
-
-    navigationContainer.innerHTML = '';
-    middleDiv.appendChild(navbutton);
-    navigationContainer.appendChild(middleDiv);
-    document.getElementById('mnavcontainer').addEventListener('click', closeNavMenu);
+function initNavPanel() {
+    if (navPanel && header) {
+        const headerHeight = header.offsetHeight;
+        navPanel.style.top = headerHeight + "px";
+        navPanel.style.height = `calc(100% - ${headerHeight}px)`;
+    }
 }
 
-function populateDesktopNavigation() {
-    let navigationContainer = document.getElementById('desktop-navigation');
-
-    navigationContainer.innerHTML = '';
-    navigationButtons.forEach(button => {
-        let buttonElement = document.createElement("button");
-		buttonElement.textContent = button.label;
-        buttonElement.onclick = function(event) {
-            navigate(event, button.url);
-        };
-        if (document.title.includes(button.keyword)) {
-            buttonElement.classList.add('active');
-        }
-        navigationContainer.appendChild(buttonElement);
+function populateNavPanel() {
+    navigationButtons.forEach(function(navButton) {
+        let a = document.createElement('a');
+        a.innerText = navButton.text;
+        a.href = navButton.url;
+        navPanelContent.appendChild(a);
     });
 }
 
-function navigate(event, url) {
-    event.preventDefault();
-    document.body.classList.remove('visible');
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-        window.location.href = url;
-    }, 500);
-}
+// Toggle with hamburger
+document.getElementById('hamburger').addEventListener('click', () => {
+    navMenuOpen ? closeNavMenu() : openNavMenu();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    initNavPanel();
+    populateNavPanel();
+	setTimeout(function() {
+    	document.body.classList.add('visible');
+	}, 10);
+});
+
+document.addEventListener('resize', initNavPanel);

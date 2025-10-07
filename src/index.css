@@ -37,16 +37,6 @@ body {
     border-radius: 8px;
 }
 
-img {
-    border-radius: 12px;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 12px var(--shadow-color);
-}
-
 /* ====================
    HEADER & NAVIGATION
 ==================== */
@@ -97,6 +87,95 @@ img:hover {
     color: #fff;
 }
 
+.nav #hamburger {
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.nav #hamburger:hover {
+    background: var(--primary-light);
+}
+
+.nav #hamburger img {
+    height: 2.25em;
+    aspect-ratio: 1 / 1;
+    transition: filter var(--transition);
+}
+
+.nav #hamburger:hover img {
+    filter: brightness(5);
+}
+
+/* ====================
+   NAV PANEL STYLING
+==================== */
+
+#navpanel {
+    position: fixed;
+    right: -25em; /* offscreen initially */
+    width: 18em;
+    top: 0;
+    z-index: 999;
+    background: white;
+    color: white;
+    box-shadow: -6px 0 20px rgba(0,0,0,0.25);
+    border-radius: 0 0 0 18px;
+    transform: translateX(0);
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.3s ease;
+    overflow-y: auto;
+    font-family: 'Google Sans', 'Roboto', sans-serif;
+}
+
+/* Slide + bounce show */
+#navpanel.show {
+    transform: translateX(-25em);
+}
+
+/* Slight bounce on close */
+#navpanel.closing {
+    transition: transform 0.35s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: translateX(0);
+}
+
+/* Scrollbar styling (optional) */
+#navpanel::-webkit-scrollbar {
+    width: 8px;
+}
+#navpanel::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+}
+
+/* Nav content wrapper */
+#navPanelContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+}
+
+/* Individual links */
+#navpanel a {
+    display: block;
+    padding: 0.8rem 1rem;
+    margin: 0.1rem 0;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 12px;
+    background: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#navpanel a:hover {
+    background: var(--primary-light);
+    color: #fff;
+    transform: translateX(5px);
+}
+
 /* ====================
    HERO SECTION
 ==================== */
@@ -126,6 +205,10 @@ img:hover {
 .hero p {
     font-size: 1.25rem;
     opacity: 0.9;
+}
+
+.hero .nivixTitle {
+    color: rgb(255, 246, 188);
 }
 
 /* ====================
@@ -161,6 +244,20 @@ img:hover {
 
 .section li {
     margin-bottom: 0.8rem;
+}
+
+.section a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.section a:hover {
+    background: var(--primary-light);
+    color: #fff;
 }
 
 /* ====================
@@ -205,22 +302,19 @@ img:hover {
 /* ====================
    MEDIA QUERIES
 ==================== */
-@media screen and (max-width: 500px) {
-    #mobile-navigation {
-        opacity: 1;
-        pointer-events: auto;
-    }
-    #desktop-navigation {
-        opacity: 0;
-        pointer-events: none;
-    }
+@media screen and (max-width: 630px) {
     body {
         overflow-x: hidden;
     }
-    .nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
+    .logo {
+        display: none;
+    }
+    #navpanel {
+        width: 80%;
+        right: -80%;
+    }
+    #navpanel.show {
+        transform: translateX(-80%);
     }
 }
 
