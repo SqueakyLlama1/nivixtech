@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Nivix Technology</title>
-	<link rel="icon" type="image/png" href="img/favicon.png">
-	<link rel="stylesheet" href="src/index.css">
-	
-	<style>
-		.logo {
-			width: 25%;
-			height: auto;
-			object-fit: contain;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Nivix Technology</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="src/index.css">
 </head>
 <body>
-	<div id="loadshade">
-		<button class="tooltip" id="loadshadeClose">X</button>
-		<div class="middle">
-			<div class="loader"></div>
-		</div>
-	</div>
-	<div id="mnavcontainer">
-		<div class="navmenu" id="navmenu"></div>
-	</div>
-	<div id="desktop-navigation"><div class="loader"></div></div>
-	<div id="mobile-navigation"><div class="loader"></div></div>
-	
-	<!-- Webpage Content !-->
-	
-	<center>
-		<br><br>
-		<img class="logo" alt="Nivix Logo" src="img/logo.png">
-		<h1>[Under Construction]</h1>
-	</center>
-	
-	<script src="src/index.js"></script>
+    <!-- Header / Hero Section -->
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.gif" alt="Nivix Logo" class="logo">
+        </div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#team">Team</a>
+            <a href="#roadmap">Roadmap</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Nivix Technology</h1>
+        <p>Building smart, affordable software solutions that empower businesses, students, and creators to thrive. Innovation, simplicity, and quality—at a price everyone can access.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <h2>Our Products</h2>
+        <p>We’re crafting tools that make your digital life easier, more productive, and smarter.</p>
+        <ul>
+            <li><strong>Nivix Studio</strong> – A complete business management suite for small and medium enterprises. Manage projects, track progress, and collaborate effortlessly.</li>
+            <li><strong>Nivix Assign</strong> – A modern assignment and grading platform that saves teachers time and helps students stay organized.</li>
+            <li><em>Coming Soon:</em> A series of productivity tools designed to streamline work for creators and businesses.</li>
+        </ul>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h4>Westin J.</h4>
+                <p>Founder & CEO – Visionary leader guiding Nivix’s mission to make software accessible and user-friendly.</p>
+            </div>
+            <div class="team-member">
+                <h4>Christian B.</h4>
+                <p>Co-Founder & Head of Development – Mastermind behind our software architecture and feature-rich platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="section">
+        <h2>Roadmap</h2>
+        <div class="roadmap-item">
+            <h4>2025</h4>
+            <ul>
+                <li>Founded</li>
+                <li>June – August: Development of Nivix Studio kicks off</li>
+                <li>September – October: Work on Nivix Assign begins</li>
+            </ul>
+            <p><em>Looking ahead:</em> 2026 will bring full product launches and new innovative tools for both individuals and businesses.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Nivix Technology | All Rights Reserved</p>
+        <p>Nivix is on a mission to bring affordable, intuitive, and reliable software to everyone.</p>
+        <p style="color: #4285f4;">Steven was here<sub> Charles, too.</sub></p>
+    </footer>
+
+    <script src="src/index.js"></script>
 </body>
 </html>
