@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap'); /* Halloween */
+
 /* ====================
-   GLOBAL BASE
+GLOBAL BASE
 ==================== */
-:root {
+/* :root {
     --primary: #4285f4;
     --primary-light: #8ab4f8;
     --secondary: #41ccff;
@@ -11,6 +13,24 @@
     --shadow-color: rgba(0, 0, 0, 0.15);
     --radius: 18px;
     --transition: 0.3s ease;
+} Default */
+
+:root { /* Halloween */
+    --primary: #f46b42;
+    --primary-light: #f8a78a;
+    --secondary: #ff7d41;
+    --surface: #4a4a4a;
+    --background: #212121;
+    --on-surface: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --radius: 18px;
+    --transition: 0.3s ease;
+}
+
+.metal-mania-regular {
+  font-family: "Metal Mania", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 html {
@@ -18,7 +38,7 @@ html {
 }
 
 body {
-    font-family: 'Google Sans', 'Roboto', Helvetica, sans-serif;
+    font-family: 'Metal Mania', 'Roboto', Helvetica, sans-serif;
     background: var(--background);
     color: var(--on-surface);
     line-height: 1.6;
@@ -37,8 +57,31 @@ body {
     border-radius: 8px;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
 /* ====================
-   HEADER & NAVIGATION
+HEADER & NAVIGATION
 ==================== */
 .header {
     display: flex;
@@ -62,6 +105,7 @@ body {
     height: 3.25em;
     object-fit: contain;
     transition: transform var(--transition);
+    /* Halloween */ filter: invert(0.5);
 }
 
 .header .logo-container .logo:hover {
@@ -71,6 +115,7 @@ body {
 .nav {
     display: flex;
     gap: 1.2rem;
+    overflow-x: auto;
 }
 
 .nav a {
@@ -102,6 +147,7 @@ body {
 .nav #hamburger img {
     height: 2.25em;
     aspect-ratio: 1 / 1;
+    /* Halloween */ filter: invert(0.5);
     transition: filter var(--transition);
 }
 
@@ -110,7 +156,7 @@ body {
 }
 
 /* ====================
-   NAV PANEL STYLING
+NAV PANEL STYLING
 ==================== */
 
 #navpanel {
@@ -119,8 +165,8 @@ body {
     width: 18em;
     top: 0;
     z-index: 999;
-    background: white;
-    color: white;
+    background: var(--surface);
+    color: var(--on-surface);
     box-shadow: -6px 0 20px rgba(0,0,0,0.25);
     border-radius: 0 0 0 18px;
     transform: translateX(0);
@@ -166,7 +212,7 @@ body {
     color: var(--primary);
     text-decoration: none;
     border-radius: 12px;
-    background: white;
+    background: transparent;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
@@ -177,7 +223,7 @@ body {
 }
 
 /* ====================
-   HERO SECTION
+HERO SECTION
 ==================== */
 .hero {
     text-align: center;
@@ -193,7 +239,7 @@ body {
 
 .hero:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 24px rgba(166, 117, 117, 0.15);
 }
 
 .hero h1 {
@@ -208,11 +254,12 @@ body {
 }
 
 .hero .nivixTitle {
-    color: rgb(255, 246, 188);
+    /* Default: color: rgb(255, 246, 188); */
+    color: rgb(255, 188, 188);
 }
 
 /* ====================
-   SECTIONS
+SECTIONS
 ==================== */
 .section {
     padding: 3.5rem 1.2rem;
@@ -261,7 +308,7 @@ body {
 }
 
 /* ====================
-   TEAM GRID
+TEAM GRID
 ==================== */
 .team-grid {
     display: flex;
@@ -287,7 +334,7 @@ body {
 }
 
 /* ====================
-   FOOTER
+FOOTER
 ==================== */
 .footer {
     background: var(--primary);
@@ -300,7 +347,7 @@ body {
 }
 
 /* ====================
-   MEDIA QUERIES
+MEDIA QUERIES
 ==================== */
 @media screen and (max-width: 630px) {
     body {
@@ -319,7 +366,7 @@ body {
 }
 
 /* ====================
-   LOAD ROTATION ANIMATION
+LOAD ROTATION ANIMATION
 ==================== */
 @keyframes loadrotate {
     0% { transform: rotate(0deg); }
