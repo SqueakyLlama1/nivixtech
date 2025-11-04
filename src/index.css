@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap'); /* Halloween */
-
 /* ====================
 GLOBAL BASE
 ==================== */
-/* :root {
+:root {
     --primary: #4285f4;
     --primary-light: #8ab4f8;
     --secondary: #41ccff;
@@ -13,24 +11,6 @@ GLOBAL BASE
     --shadow-color: rgba(0, 0, 0, 0.15);
     --radius: 18px;
     --transition: 0.3s ease;
-} Default */
-
-:root { /* Halloween */
-    --primary: #f46b42;
-    --primary-light: #f8a78a;
-    --secondary: #ff7d41;
-    --surface: #4a4a4a;
-    --background: #212121;
-    --on-surface: #ffffff;
-    --shadow-color: rgba(0, 0, 0, 0.15);
-    --radius: 18px;
-    --transition: 0.3s ease;
-}
-
-.metal-mania-regular {
-  font-family: "Metal Mania", system-ui;
-  font-weight: 400;
-  font-style: normal;
 }
 
 html {
@@ -38,7 +18,7 @@ html {
 }
 
 body {
-    font-family: 'Metal Mania', 'Roboto', Helvetica, sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     background: var(--background);
     color: var(--on-surface);
     line-height: 1.6;
@@ -105,7 +85,6 @@ HEADER & NAVIGATION
     height: 3.25em;
     object-fit: contain;
     transition: transform var(--transition);
-    /* Halloween */ filter: invert(0.5);
 }
 
 .header .logo-container .logo:hover {
@@ -147,7 +126,6 @@ HEADER & NAVIGATION
 .nav #hamburger img {
     height: 2.25em;
     aspect-ratio: 1 / 1;
-    /* Halloween */ filter: invert(0.5);
     transition: filter var(--transition);
 }
 
