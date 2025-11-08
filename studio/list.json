@@ -3,6 +3,10 @@
     "store"
   ],
   "updates": {
-    "store": {"version": "0.1.0", "requires": ["0.1"]}
+    "store": {
+    "versions": {
+        "0.1.0": { "requires": ["0.1"] }
+      }
+    }
   }
 }
