@@ -6,7 +6,7 @@ var navPanelContent = document.getElementById('navPanelContent');
 
 var navigationButtons = [
     {text:"Home",url:"index.html"},
-    {text:"Employee Dashboard",url:"dashboard.html"}
+    {text:"Nivix Studio",url:"studio.html"}
 ];
 
 function openNavMenu() {
