@@ -4,6 +4,6 @@
   ],
   "updates": {
     "studio": { "version": "0.1" },
-    "store": { "version": "0.1.0", "requires": ["0.1"] }
+    "store": { "version": "0.1.0", "requires": ["0.1", "0.2"] }
   }
 }
