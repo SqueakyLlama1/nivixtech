@@ -3,7 +3,7 @@
     "store"
   ],
   "updates": {
-    "studio": { "version": "0.2.0" },
-    "store": { "version": "0.1.0", "requires": ["0.1", "0.2.0"] }
+    "studio": { "version": "0.2.1" },
+    "store": { "version": "0.1.0", "requires": ["0.1", "0.2.0", "0.2.1"] }
   }
 }
