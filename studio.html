@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Nivix Studio</title>
+    <link rel="icon" type="image/png" href="img/favicon.png?v=43">
+    <link rel="stylesheet" href="src/index.css?v=43">
+</head>
+<body>
+    <div id="navpanel">
+        <center id="navPanelContent"></center>
+    </div>
+    
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.gif" alt="Nivix Logo" class="logo">
+        </div>
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#download">Download</a>
+            <a href="#troubleshoot">Troubleshoot</a>
+            <a href="#versions">Versions</a>
+            <a href="#terms">License</a>
+            <a href="#progress">Update Progress</a>
+            <button id="hamburger"><img src="img/menu.png" id="navpanelimg"></button>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <h1><span class="nivixTitle">Nivix Studio</span></h1>
+        <p>A <strong>free</strong>, simple, and powerful all-in-one business toolkit. Designed to be easy, reliable, and packed with features other companies don’t offer.</p>
+    </section>
+    
+    <section class="section" id="about">
+        <center>
+            <h3>About Nivix Studio</h3>
+            <p>Nivix Studio is a free web-based platform that lets you download additional apps to expand its features. These downloadable apps focus on specific tasks needed in many industries. Currently, the first available addon is <strong>Nivix Store</strong>, our inventory management app.</p>
+        </center>
+    </section>
+    
+    <section class="section" id="download">
+        <center>
+            <h3>Download Nivix Studio</h3>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_win64.exe">Windows</a>
+            <br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_debian64.deb">DEB</a>
+            <br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_redhat64.rpm">RPM</a>
+            <br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_source.zip">Source Code</a>
+            <p>Studio v0.2.1 | Beta | Dec 10, 2025</p>
+            
+            <hr>
+            
+            <p>Click above to download the installer for your respected platform.</p>
+            
+            <h3>Help! Which files are for which platforms?</h3>
+            <p>Click or search:</p>
+            <a target="_blank" href="https://www.google.com/search?q=Which+distributions+of+Linux+use+rpm%3F&oq=Which+distributions+of+Linux+use+rpm%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yDQgCEAAYhgMYgAQYigUyDQgDEAAYhgMYgAQYigUyDQgEEAAYhgMYgAQYigUyCggFEAAYgAQYogQyBwgGEAAY7wUyCggHEAAYogQYiQUyCggIEAAYgAQYogTSAQkxMTEwMWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8">Which distributions of Linux use rpm?</a>
+            <br>
+            <a target="_blank" href="https://www.google.com/search?q=Which+distributions+of+Linux+use+deb%3F&sca_esv=f3c15013da1a5a7a&sxsrf=AE3TifNwKwelTG_aNE7Z8LOyPDNt8VWslQ%3A1765220751649&ei=jyE3aaS3J4HvkPIPmOqymQQ&ved=2ahUKEwjkuuje166RAxWBN0QIHRi1LEMQ4dUDegQIBRAN&uact=5&oq=Which+distributions+of+Linux+use+deb%3F&gs_lp=Egxnd3Mtd2l6LXNlcnAiJFdoYXQgZGlzdHJpYnV0aW9ucyBvZiBMaW51eCB1c2UgZGViPzIFECEYoAEyBRAhGKABMgUQIRigATIFECEYqwJIpgdQiAJYsARwAngBkAEAmAF7oAHcAqoBAzAuM7gBA8gBAPgBAZgCBKACnALCAgoQABhHGNYEGLADmAMAiAYBkAYIkgcDMi4yoAf6DrIHAzAuMrgHiwLCBwUyLTIuMsgHIIAIAQ&sclient=gws-wiz-serp">Which distributions of Linux use deb?</a>
+            
+            <br><br>
+            <hr>
+            
+            <h3>How to Install Nivix Studio</h3>
+            <p>
+                Before installing, make sure you have Node.js installed:<br>
+                <a href="https://nodejs.org/en/download">Node.js</a><br><br>
+                
+                After downloading the installer, run it
+                
+                <br>
+                <hr>
+                
+                <h3>Supported Systems</h3>
+                <p>Nivix Studio works on:<br>
+                    &bull; Windows 10/11<br>
+                    &bull; Linux (Debian/Redhat)
+                    <br><br>
+                    Specifically Tested On:<br>
+                    &bull; Windows 11<br>
+                    &bull; Fedora (RedHat)<br>
+                    &bull; Debian (Debian)
+                    <br><br>
+                    <p>Note: While they SHOULD work on their fellow distributions or versions, we would like to be in the know about any compatbility issues, or if you want us to come to another platform! We'd be willing to expand as far as possible.</p>
+                </p>
+                
+                <br>
+                <hr>
+                
+                <h3>Common Questions:</h3>
+                
+                <h3>Can I install Studio on a USB drive?</h3>
+                <p><strong>No, you cannot.</strong></p>
+                
+                <br>
+                
+                <h3>Where is my data being stored?</h3>
+                <p>Nivix Studio saves its data in your system’s home folder:<br>
+                    &bull; Windows: <code>C:\Users\(your_username)\nvxstdo\</code><br>
+                    &bull; Linux: <code>/home/(your_username)/nvxstdo/</code>
+                </p>
+                
+                <br>
+                
+                <h3>Can I downgrade Studio?</h3>
+                <p><strong>Yes, you can downgrade.</strong> All versions of Nivix Studio remain available and usable.  
+                    Older versions may be missing newer security fixes or features, so use them with caution.
+                </p>
+                
+                <br>
+                <hr>
+                
+                <h3>Send Feedback</h3>
+                <p>We’d love to hear from you!  
+                    Email your ideas or suggestions to: <br><strong>owner@nivixtech.com</strong><br>
+                    You can also email us bug reports, you must include: How to reproduce the bug, which version this bug can be seen in, a description of the bug, which platform the bug is experienced on.
+                </p>
+                
+                <br>
+                <hr>
+                
+                <h3>Credits</h3>
+                &bull; Programming Apps & Websites
+                <p>Christian Bone</p>
+                <br>
+                &bull; Art
+                <br>
+                <p>Westin J.</p>
+                <p>Christian Bone</p>
+            </p>
+        </center>
+    </section>
+    
+    <section class="section" id="troubleshoot">
+        <center>
+            <h3>Troubleshooting</h3>
+            <p>&bull; Error: couldn't start runtime.js, Fix: make sure you have Node.js installed</p>
+            <p>&bull; Error: SmartScreen Protected your computer, Fix: click "More Info" and then "Run Anyway"</p>
+        </center>
+    </section>
+    
+    <section class="section" id="versions">
+        <center>
+            <h3>Version Downloads</h3>
+            <br>
+            
+            <p>Studio 0.2.1 | Patch | Dec 10, 2025</p>
+            
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_win64.exe">Windows</a><br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_debian64.deb">DEB</a><br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_redhat64.rpm">RPM</a><br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.1_source.zip">Source Code</a><br>
+            <hr>
+            <p>Studio 0.2.0 | Release | Dec 6, 2025</p>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.0_win64.exe">Windows</a><br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.0_debian64.deb">DEB</a><br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.0_redhat64.rpm">RPM</a><br>
+            <a href="https://www.nivixtech.com/studio/app/studio_0.2.0_source.zip">Source Code</a><br>
+            <hr>
+            <p>Studio 0.1 | Release | Nov 10, 2025</p>
+            <a href="https://www.nivixtech.com/studio/app/studio-0.1.zip">Source Code</a>
+        </center>
+    </section>
+    
+    <section class="section" id="terms">
+        <center>
+            <h3>License</h3>
+            <p>Nivix Studio is covered under the Apache 2.0 license</p>
+        </center>
+    </section>
+    
+    <section class="section" id="progress">
+        <center>
+            <h3>Progress</h3>
+            <p>No more wondering when an update is coming out, or what's going to be in it. Check below to see the progress on the latest update.</p>
+            
+            <div class="update-info">
+                <p><strong>Version:</strong> 0.3.0</p>
+                <p><strong>Version Type:</strong> Feature</p>
+                <p><strong>Last Updated:</strong> 12/31/2025 by Christian Bone</p>
+                <p><strong>Feature List:</strong> Final</p>
+                <p><strong>Release ETA:</strong> February or March 2026</p>
+                
+                <ul class="feature-tasks">
+                    <li class="complete">Update package info [Completed on Dec 11, 2025]</li>
+                    <li class="complete">Multitasking [Completed on Dec 31, 2025]</li>
+                    <li class="complete">Runtime Optimizations [Completed on Dec 29, 2025]</li>
+                    <li class="complete">System Apps [Completed on Dec 31, 2025]</li>
+                    <li class="complete">Add native app packages [Completed on Dec 31, 2025]</li>
+                    <li class="complete">Add desktop interface [Completed on Dec 31, 2025]</li>
+                    <li class="planned">Advanced app options [Planned]</li>
+                    <li class="planned">Tooltips [Planned]</li>
+                    <li class="planned">Notification system overhaul [Planned]</li>
+                    <li class="planned">More Settings [Planned]</li>
+                    <li class="canceled">Pinning apps on the dock [Canceled]</li>
+                    <li class="canceled">More EaseJS functions [Canceled]</li>
+                    <li class="canceled">Convert app system [Canceled]</li>
+                    <li class="canceled">Convert to native-webview [Canceled]</li>
+                </ul>
+            </div>
+        </center>
+    </section>
+
+    <script src="src/index.js?v=43"></script>
+</body>
+</html>
