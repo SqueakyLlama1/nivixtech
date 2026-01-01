@@ -2,14 +2,14 @@
 GLOBAL BASE
 ==================== */
 :root {
-    --primary: #4285f4;
-    --primary-light: #8ab4f8;
+    --primary: #43a4eb;
+    --primary-light: #83b7db;
     --secondary: #41ccff;
     --surface: #ffffff;
     --background: #f5f7fa;
     --on-surface: #202124;
     --shadow-color: rgba(0, 0, 0, 0.15);
-    --radius: 18px;
+    --radius: 12px;
     --transition: 0.3s ease;
 }
 
@@ -94,12 +94,14 @@ HEADER & NAVIGATION
     display: flex;
     gap: 1.2rem;
     overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .nav a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 600;
+    text-wrap: nowrap;
     padding: 0.4rem 0.8rem;
     border-radius: 12px;
     transition: background var(--transition), color var(--transition);
