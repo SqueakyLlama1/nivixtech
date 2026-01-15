@@ -6,26 +6,20 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
-  <loc>https://www.nivixtech.com/index.html</loc>
+  <loc>https://www.nivixtech.com/studio.html</loc>
   <lastmod>2026-01-15T20:39:06+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.nivixtech.com/studio.html</loc>
+  <loc>https://www.nivixtech.com/index.html</loc>
   <lastmod>2026-01-15T20:39:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.nivixtech.com/dashboard.html</loc>
   <lastmod>2026-01-15T20:39:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.nivixtech.com/404.html</loc>
-  <lastmod>2026-01-15T20:39:06+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.50</priority>
 </url>
 
 
