@@ -1,6 +1,4 @@
-/* ====================
-GLOBAL BASE
-==================== */
+/* Base */
 :root {
     --primary: #43a4eb;
     --primary-light: #83b7db;
@@ -36,32 +34,26 @@ body {
     border: 2px solid var(--secondary);
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 7px;
   height: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #ccc;
   border-radius: 4px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 4px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary);
 }
 
-/* ====================
-HEADER & NAVIGATION
-==================== */
+/* Header & Navigation */
 .header {
     display: flex;
     justify-content: space-between;
@@ -114,9 +106,7 @@ HEADER & NAVIGATION
     box-shadow: 0 4px 15px rgba(67,164,235,0.3);
 }
 
-/* ====================
-HERO SECTION
-==================== */
+/* Hero Section */
 
 h1, h2, h3 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -154,9 +144,7 @@ h1, h2, h3 {
     color: #fff19f;
 }
 
-/* ====================
-SECTIONS
-==================== */
+/* Sections */
 .section {
     padding: 3.5rem 1.2rem;
     max-width: 1000px;
@@ -212,9 +200,7 @@ SECTIONS
     color: #fff;
 }
 
-/* ====================
-TEAM GRID
-==================== */
+/* Team Grid */
 .team-grid {
     display: flex;
     flex-wrap: wrap;
@@ -238,9 +224,7 @@ TEAM GRID
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* ====================
-FOOTER
-==================== */
+/* Footer */
 .footer {
     background: var(--primary);
     color: white;
@@ -251,9 +235,7 @@ FOOTER
     box-shadow: 0 -4px 10px var(--shadow-color);
 }
 
-/* ====================
-MEDIA QUERIES
-==================== */
+/* Mobile Support */
 @media screen and (max-width: 630px) {
     body {
         overflow-x: hidden;
@@ -261,50 +243,4 @@ MEDIA QUERIES
     .logo {
         display: none;
     }
-}
-
-/* ====================
-LOAD ROTATION ANIMATION
-==================== */
-@keyframes loadrotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* ====================
-PROGRESS TRACKER
-==================== */
-.update-info {
-    text-align: left;
-    max-width: 700px;
-    margin: 1.5rem auto;
-}
-
-.feature-tasks {
-    list-style: none;
-    padding: 0;
-    margin: 0.2rem 0 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.feature-tasks li {
-    width: 100%;
-    padding: 0.6rem 1rem;
-    border-radius: 4px;
-    font-weight: 500;
-    color: #202124;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.complete { background: #9fffa2; }
-.canceled { background: #ffc0c5; }
-.planned { background: #e0e0e0; }
-.in-progress { background: #ffe9a2; }
-.in-determination { background: #b9b9b9; }
-
-.feature-tasks li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 6px var(--shadow-color);
 }
