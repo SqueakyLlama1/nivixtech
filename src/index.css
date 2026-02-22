@@ -162,7 +162,7 @@ body {
     color: var(--brand-dark);
     text-decoration: none;
     font-weight: 800;
-    padding: 0.9rem 0px;
+    padding: 0.9rem 2rem;
     border-radius: var(--radius);
     transition: transform 0.2s, box-shadow 0.2s;
     white-space: nowrap;
@@ -367,6 +367,7 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
     }
     .btn-banner {
         width: 100%;
+        padding: 0.9rem 0px;
         text-align: center;
     }
 }
