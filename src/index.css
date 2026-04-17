@@ -66,10 +66,9 @@ body {
     align-items: center;
 }
 
-
 .logo:hover { transform: rotate(-1.5deg) scale(1.02); }
 
-.nav { display: flex; gap: 0.5rem; align-items: center; }
+.nav { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
 
 .nav a {
     color: var(--brand-color);
