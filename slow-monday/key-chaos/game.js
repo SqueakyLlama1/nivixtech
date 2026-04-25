@@ -182,7 +182,7 @@ function count() {
     wpmAvgTick++;
     if (wpmAvgTick >= 4) {
         wpmAvgTick = 0;
-        wpmAverages.push(currentWPM);
+        wpmAverages.push(BigInt(currentWPM));
     }
     
     getEBD('game-wpm').innerText = `Speed: ${currentWPM} WPM`;
@@ -267,7 +267,7 @@ function endGame() {
     wpmAverages.forEach(function(avg) {
         averagesTotal += avg;
     });
-    averageWpm = Math.round((averagesTotal / totalAverages));
+    averageWpm = BigInt(Math.round((averagesTotal / totalAverages)));
     getEBD('game-wpm').innerText = `Average Speed: ${averageWpm} WPM`;
 }
 
