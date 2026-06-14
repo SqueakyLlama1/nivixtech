@@ -204,7 +204,7 @@ h1:not(.hero h1), h2, h3, h4 {
 h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1.5rem; }
 
 /* Internal Heading Reset */
-.info-box h3, .roadmap-item h4, .team-member h4, .version-card h4, .version-card h5 {
+.info-box h3, .team-member h4, .version-card h4, .version-card h5 {
     background: transparent;
     color: var(--brand-color);
     margin: 0 0 0.5rem 0;
@@ -332,16 +332,6 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
     font-weight: 700;
     border: 1px solid var(--brand-light);
 }
-
-.roadmap-item {
-    background: var(--bg-main);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border-top: 4px solid var(--brand-color);
-    margin-bottom: 1rem;
-}
-
-.roadmap-item li { border-bottom: 1px dashed #ccc; padding: 5px 0; }
 
 .footer {
     background: var(--brand-color);
