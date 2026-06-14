@@ -1,21 +1,10 @@
-:root {
-    /* Brand Core */
-    --brand-color: #43a4eb;
-    --brand-light: #71aeda;
-    --brand-dark: #258dd8;
-    --accent-gold: #fff19f;
-    
-    /* Functional UI */
-    --bg-main: #f5f7fa;
-    --bg-card: #ffffff;
-    --text-main: #202124;
-    --text-muted: #666666;
-    --border-color: #eeeeee;
-    
-    /* Global Styles */
-    --radius: 12px;
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    --speed: 0.3s ease;
+body {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    animation: fadeInPage 0.8s ease-out forwards;
 }
 
 @keyframes fadeInPage {
@@ -23,30 +12,12 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: 'Roboto', Helvetica, sans-serif;
-    background: var(--bg-main);
-    color: var(--text-main);
-    line-height: 1.6;
-    margin: 0;
-    animation: fadeInPage 0.8s ease-out forwards;
-}
-
-/* Global Reset & Scrollbar */
-:focus { outline: none; border: 2px solid var(--brand-dark); }
-::-webkit-scrollbar { width: 7px; height: 5px; }
-::-webkit-scrollbar-track { background: #ccc; }
-::-webkit-scrollbar-thumb { background: var(--brand-light); }
-::-webkit-scrollbar-thumb:hover { background: var(--brand-dark); }
-
 /* Header & Nav */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-card);
+    background: var(--background-primary);
     padding: 0.2rem 1.5rem;
     position: sticky;
     top: 0;
@@ -57,7 +28,7 @@ body {
 
 .logo {
     height: 2.5rem;
-    transition: transform var(--speed);
+    transition: transform var(--transition);
     backface-visibility: hidden;
 }
 
@@ -71,17 +42,17 @@ body {
 .nav { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
 
 .nav a {
-    color: var(--brand-color);
+    color: var(--brand-primary);
     text-decoration: none;
     font-weight: 600;
     padding: 0.3rem 0.6rem;
     font-size: 0.95rem;
     border-radius: 8px;
-    transition: all var(--speed);
+    transition: all var(--transition);
 }
 
 .nav a:hover {
-    background: var(--brand-light);
+    background: var(--brand-tertiary);
     color: white;
 }
 
@@ -91,7 +62,7 @@ body {
 .hero {
     text-align: center;
     padding: 4rem 1.5rem;
-    background: var(--brand-color);
+    background: var(--brand-primary);
     color: white;
     border-radius: var(--radius);
     margin: 2rem auto;
@@ -99,10 +70,9 @@ body {
 }
 
 .hero h1 { font-size: 2.8rem; margin: 0; }
-.hero .nivixTitle { color: var(--accent-gold); }
 
-.banner-store {
-    background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-dark) 100%);
+.banner {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
     color: white;
     padding: 2rem 1.5rem;
     margin: 1rem auto 3rem auto;
@@ -128,7 +98,7 @@ body {
 .banner-logo {
     height: 70px;
     width: auto;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--background-primary);
     padding: 12px;
     border-radius: 15px;
     backdrop-filter: blur(5px);
@@ -152,8 +122,8 @@ body {
 
 .banner-badge {
     display: inline-block;
-    background: var(--accent-gold);
-    color: #857400;
+    background: var(--brand-secondary);
+    color: var(--text-tertiary);
     font-size: 0.75rem;
     font-weight: 900;
     padding: 3px 10px;
@@ -162,29 +132,11 @@ body {
     letter-spacing: 0.5px;
 }
 
-.btn-banner {
-    background: white;
-    color: var(--brand-dark);
-    text-decoration: none;
-    font-weight: 800;
-    padding: 0.9rem 2rem;
-    border-radius: var(--radius);
-    transition: transform 0.2s, box-shadow 0.2s;
-    white-space: nowrap;
-    font-size: 1rem;
-}
-
-.btn-banner:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    background: #fdfdfd;
-}
-
 .section {
     padding: 1rem 1.5rem;
     max-width: 1000px;
     margin: 0 auto 2rem auto;
-    background: var(--bg-card);
+    background: var(--background-secondary);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -193,7 +145,7 @@ body {
 /* Tab & Header Styling */
 h1:not(.hero h1), h2, h3, h4 {
     font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
-    background: var(--brand-color);
+    background: var(--brand-primary);
     color: white;
     display: table;
     padding: 4px 20px;
@@ -206,7 +158,7 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
 /* Internal Heading Reset */
 .info-box h3, .team-member h4, .version-card h4, .version-card h5 {
     background: transparent;
-    color: var(--brand-color);
+    color: var(--brand-primary);
     margin: 0 0 0.5rem 0;
     padding: 0;
     display: block;
@@ -222,17 +174,16 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
 }
 
 .version-card {
-    background: var(--bg-main);
+    background: var(--background-primary);
     padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
-    border: 1px solid var(--border-color);
 }
 
 .version-card.latest {
     grid-column: 1 / -1;
-    background: var(--bg-card);
-    border: 2px solid var(--brand-color);
+    background: var(--background-primary);
+    border: 2px solid var(--brand-primary);
     position: relative;
 }
 
@@ -241,19 +192,19 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-gold);
-    color: #857400;
+    background: var(--brand-secondary);
+    color: var(--text-tertiary);
     padding: 2px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 /* Discontinued Card Variation */
 .version-card.discontinued {
     filter: grayscale(0.5);
     opacity: 0.8;
-    transition: filter var(--speed), opacity var(--speed);
+    transition: filter var(--transition), opacity var(--transition);
     border-style: dashed;
 }
 
@@ -278,8 +229,8 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
     flex-wrap: wrap;
 }
 
-.v-num { font-weight: 800; color: var(--text-main); font-size: 1.1rem; }
-.v-date { font-size: 0.85rem; color: var(--text-muted); font-family: monospace; }
+.v-num { font-weight: 800; color: var(--text-primary); font-size: 1.1rem; }
+.v-date { font-size: 0.85rem; color: var(--text-secondary); font-family: monospace; }
 .v-type { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; }
 
 .type-major { background: #ffdce0; color: #af2e3c; }
@@ -288,7 +239,7 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
 
 /* Buttons */
 .btn-main {
-    background: var(--brand-color) !important;
+    background: var(--brand-primary) !important;
     color: white !important;
     border: none !important;
     padding: 0.6rem 1.2rem;
@@ -301,12 +252,12 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
 }
 
 .btn-main:hover {
-    background: var(--brand-dark) !important;
+    background: var(--brand-secondary) !important;
     transform: translateY(-2px);
 }
 
 .historical-links a {
-    color: var(--brand-color);
+    color: var(--brand-primary);
     font-weight: 700;
     text-decoration: none;
     font-size: 0.85rem;
@@ -319,27 +270,18 @@ h1:not(.hero h1) { font-size: 2rem; padding: 8px 45px 8px 25px; margin-bottom: 1
     background: #eef7ff;
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
-    border-left: 5px solid var(--brand-color);
+    border-left: 5px solid var(--brand-primary);
     margin: 1.5rem 0;
 }
 
 .tag {
-    background: var(--bg-main);
-    color: var(--brand-color);
+    background: var(--background-primary);
+    color: var(--brand-primary);
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 700;
-    border: 1px solid var(--brand-light);
-}
-
-.footer {
-    background: var(--brand-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    margin-top: 4rem;
-    border-radius: var(--radius) var(--radius) 0 0;
+    border: 1px solid var(--brand-tertiary);
 }
 
 /* Mobile */
